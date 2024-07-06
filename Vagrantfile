@@ -137,7 +137,7 @@ $env:PATH +=";$($env:SystemDrive)\\ProgramData\\chocolatey\\bin"
 # https://github.com/chocolatey/choco/issues/512
 $validExitCodes = @(0, 1605, 1614, 1641, 3010)
 
-Write-Output "Testing package if a line is uncommented."
+Write-Output "!!!!!!!!!!!!!!!!!!!!!Testing package if a line is uncommented!!!!!!!!!!!!!!!!!!!!!"
 # THIS IS WHAT YOU CHANGE
 # - uncomment one of the two and edit it appropriately
 # - See the README for details
