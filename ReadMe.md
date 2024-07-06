@@ -8,6 +8,7 @@ When creating packages, please review https://github.com/chocolatey/choco/wiki/C
 
 ## Table of Contents
 
+- [Quick Review/Basic Workflow/Notes](#quick-reviewbasic-workflownotes)
 - [Requirements](#requirements)
 - [Setup](#setup)
 - [Running Verification Manually](#running-verification-manually)
@@ -20,6 +21,20 @@ When creating packages, please review https://github.com/chocolatey/choco/wiki/C
   - [Using Hyper-V instead of VirtualBox](#using-hyper-v-instead-of-virtualbox)
 - [Differences Between This and Package Verifier Service](#differences-between-this-and-package-verifier-service)
 - [Troubleshooting](#troubleshooting)
+
+## Quick Review/Basic Workflow/Notes
+
+* Use powershell.
+* For AMD, AMD-V must be enabled in bios.
+* Run `vagrant up` to prepare the machine for testing.
+* Save a snapshot with `vagrant snapshot save good`.
+* `packages` folder is shared with the VM at `C:\packages`. Drop a built nupkg file here to test.
+* In `Vagrantfile`, change the lines near `# THIS IS WHAT YOU CHANGE` to alter what you are testing.
+* Make sure to get the sources right, ie if you are testing a remote vs local package.
+* Run `vagrant provision` to run the test.
+* Reset state with `vagrant snapshot restore good --no-provision`, then free to test again.
+* Stop the box with `vagrant suspend`, `vagrant halt`
+* Delete the box with `vagrant destroy`
 
 ## Requirements
 
